@@ -25,6 +25,7 @@ namespace CSCI497_Calculator2
         long Results = 0;
         String Operation = "";
         bool IsOperation = false;
+        bool AfterEquals = false;
 
         public MainWindow()
         {
@@ -38,7 +39,9 @@ namespace CSCI497_Calculator2
                 txtAnswers.Clear();
             }
             IsOperation = false;
-            txtAnswers.Text = txtAnswers.Text + "0";
+
+            if (!AfterEquals)
+                txtAnswers.Text = txtAnswers.Text + "0";
         }
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
@@ -48,7 +51,9 @@ namespace CSCI497_Calculator2
                 txtAnswers.Clear();
             }
             IsOperation = false;
-            txtAnswers.Text = txtAnswers.Text + "1";
+
+            if (!AfterEquals)
+                txtAnswers.Text = txtAnswers.Text + "1";
         }
 
         private void Btn2_Click(object sender, RoutedEventArgs e)
@@ -58,7 +63,9 @@ namespace CSCI497_Calculator2
                 txtAnswers.Clear();
             }
             IsOperation = false;
-            txtAnswers.Text = txtAnswers.Text + "2";
+
+            if (!AfterEquals)
+                txtAnswers.Text = txtAnswers.Text + "2";
         }
 
         private void Btn3_Click(object sender, RoutedEventArgs e)
@@ -68,7 +75,9 @@ namespace CSCI497_Calculator2
                 txtAnswers.Clear();
             }
             IsOperation = false;
-            txtAnswers.Text = txtAnswers.Text + "3";
+
+            if (!AfterEquals)
+                txtAnswers.Text = txtAnswers.Text + "3";
         }
 
         private void Btn4_Click(object sender, RoutedEventArgs e)
@@ -78,7 +87,9 @@ namespace CSCI497_Calculator2
                 txtAnswers.Clear();
             }
             IsOperation = false;
-            txtAnswers.Text = txtAnswers.Text + "4";
+
+            if (!AfterEquals)
+                txtAnswers.Text = txtAnswers.Text + "4";
         }
 
         private void Btn5_Click(object sender, RoutedEventArgs e)
@@ -88,7 +99,9 @@ namespace CSCI497_Calculator2
                 txtAnswers.Clear();
             }
             IsOperation = false;
-            txtAnswers.Text = txtAnswers.Text + "5";
+
+            if (!AfterEquals)
+                txtAnswers.Text = txtAnswers.Text + "5";
         }
 
         private void Btn6_Click(object sender, RoutedEventArgs e)
@@ -98,7 +111,9 @@ namespace CSCI497_Calculator2
                 txtAnswers.Clear();
             }
             IsOperation = false;
-            txtAnswers.Text = txtAnswers.Text + "6";
+
+            if (!AfterEquals)
+                txtAnswers.Text = txtAnswers.Text + "6";
         }
 
         private void Btn7_Click(object sender, RoutedEventArgs e)
@@ -108,7 +123,9 @@ namespace CSCI497_Calculator2
                 txtAnswers.Clear();
             }
             IsOperation = false;
-            txtAnswers.Text = txtAnswers.Text + "7";
+
+            if (!AfterEquals)
+                txtAnswers.Text = txtAnswers.Text + "7";
         }
 
         private void Btn8_Click(object sender, RoutedEventArgs e)
@@ -118,6 +135,8 @@ namespace CSCI497_Calculator2
                 txtAnswers.Clear();
             }
             IsOperation = false;
+
+            if(!AfterEquals)
             txtAnswers.Text = txtAnswers.Text + "8";
         }
 
@@ -128,6 +147,8 @@ namespace CSCI497_Calculator2
                 txtAnswers.Clear();
             }
             IsOperation = false;
+
+            if (!AfterEquals)
             txtAnswers.Text = txtAnswers.Text + "9";
         }
 
@@ -136,7 +157,8 @@ namespace CSCI497_Calculator2
             Operation = "+";
             Results = long.Parse(txtAnswers.Text);
             IsOperation = true;
-            
+
+            AfterEquals = false;
         }
 
         private void BtnMinus_Click(object sender, RoutedEventArgs e)
@@ -144,6 +166,8 @@ namespace CSCI497_Calculator2
             Operation = "-";
             Results = long.Parse(txtAnswers.Text);
             IsOperation = true;
+
+            AfterEquals = false;
         }
 
         private void BtnTimes_Click(object sender, RoutedEventArgs e)
@@ -151,6 +175,8 @@ namespace CSCI497_Calculator2
             Operation = "*";
             Results = long.Parse(txtAnswers.Text);
             IsOperation = true;
+
+            AfterEquals = false;
         }
 
         private void BtnDivide_Click(object sender, RoutedEventArgs e)
@@ -158,6 +184,8 @@ namespace CSCI497_Calculator2
             Operation = "/";
             Results = long.Parse(txtAnswers.Text);
             IsOperation = true;
+
+            AfterEquals = false;
         }
 
         private void BtnEquils_Click(object sender, RoutedEventArgs e)
@@ -180,6 +208,7 @@ namespace CSCI497_Calculator2
 
                     
             }//end switch
+            AfterEquals = true;
             
         }
 
@@ -187,6 +216,7 @@ namespace CSCI497_Calculator2
         {
             txtAnswers.Text = "0";
             Results = 0;
+            AfterEquals = false;
         }
 
         private void BtnPostiveNegative_Click(object sender, RoutedEventArgs e)
@@ -225,6 +255,7 @@ namespace CSCI497_Calculator2
                 number2 = 0;
             }
             txtAnswers.Text = "0";
+            AfterEquals = false;
         }
     }
 }
