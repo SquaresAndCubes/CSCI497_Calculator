@@ -22,7 +22,7 @@ namespace CSCI497_Calculator2
     {
         long number1 = 0;
         long number2 = 0;
-        long Results = 0;
+        double Results = 0;
         String Operation = "";
         bool IsOperation = false;
         bool AfterEquals = false;
@@ -155,7 +155,7 @@ namespace CSCI497_Calculator2
         private void BtnPlus_Click(object sender, RoutedEventArgs e)
         {
             Operation = "+";
-            Results = long.Parse(txtAnswers.Text);
+            Results = double.Parse(txtAnswers.Text);
             IsOperation = true;
 
             AfterEquals = false;
@@ -164,7 +164,7 @@ namespace CSCI497_Calculator2
         private void BtnMinus_Click(object sender, RoutedEventArgs e)
         {
             Operation = "-";
-            Results = long.Parse(txtAnswers.Text);
+            Results = double.Parse(txtAnswers.Text);
             IsOperation = true;
 
             AfterEquals = false;
@@ -173,7 +173,7 @@ namespace CSCI497_Calculator2
         private void BtnTimes_Click(object sender, RoutedEventArgs e)
         {
             Operation = "*";
-            Results = long.Parse(txtAnswers.Text);
+            Results = double.Parse(txtAnswers.Text);
             IsOperation = true;
 
             AfterEquals = false;
@@ -182,7 +182,7 @@ namespace CSCI497_Calculator2
         private void BtnDivide_Click(object sender, RoutedEventArgs e)
         {
             Operation = "/";
-            Results = long.Parse(txtAnswers.Text);
+            Results = double.Parse(txtAnswers.Text);
             IsOperation = true;
 
             AfterEquals = false;
@@ -194,16 +194,16 @@ namespace CSCI497_Calculator2
             switch (Operation)
             {
                 case "+":
-                    txtAnswers.Text = (Results + long.Parse(txtAnswers.Text)).ToString();
+                    txtAnswers.Text = (Results + double.Parse(txtAnswers.Text)).ToString();
                     break;
                 case "-":
-                    txtAnswers.Text = (Results - long.Parse(txtAnswers.Text)).ToString();
+                    txtAnswers.Text = (Results - double.Parse(txtAnswers.Text)).ToString();
                     break;
                 case "*":
-                    txtAnswers.Text = (Results * long.Parse(txtAnswers.Text)).ToString();
+                    txtAnswers.Text = (Results * double.Parse(txtAnswers.Text)).ToString();
                     break;
                 case "/":
-                    txtAnswers.Text = (Results / long.Parse(txtAnswers.Text)).ToString();
+                    txtAnswers.Text = (Results / double.Parse(txtAnswers.Text)).ToString();
                     break;
 
                     
