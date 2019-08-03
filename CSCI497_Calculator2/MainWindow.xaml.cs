@@ -28,11 +28,11 @@ namespace CSCI497_Calculator2
             {
             if (operation != "")
                 {
-                number2 = num_in;
+                number2 = number2 + num_in;
                 }
             else
                 {
-                number1 = num_in;
+                number1 = number1 + num_in;
                 }
             }
         public String Calculate()
@@ -75,10 +75,7 @@ namespace CSCI497_Calculator2
             {
             isOperation = false;
             //when user types in number after equals this clears the screen
-            if (afterEquals == true)
-                {
-                txtAnswers.Clear();
-                }
+
             //calls Calculator to pass it numbers for entry to the operation.
             thisCalculator.NumEntry(num.ToString());
             txtAnswers.Text = txtAnswers.Text + num.ToString();
@@ -91,7 +88,7 @@ namespace CSCI497_Calculator2
             thisCalculator.operation = oper;
             txtAnswers.Clear();
             isOperation = true;
-            afterEquals = false;
+            
             }
 
         //Initializes the MainWindow GUI Object
