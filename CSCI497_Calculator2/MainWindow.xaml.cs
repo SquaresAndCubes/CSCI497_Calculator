@@ -17,7 +17,7 @@ namespace CSCI497_Calculator2
 {
 
     //Brents revision of code for separation of Calculator Logic from UI
-
+    //Testing .gitignore
     //Calulator class encapsulates all mathematical logic separate from the UI
     public class Calculator
         {
