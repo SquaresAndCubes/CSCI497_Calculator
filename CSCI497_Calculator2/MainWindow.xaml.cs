@@ -49,6 +49,7 @@ namespace CSCI497_Calculator2
             }
         public String Calculate()
             {
+
             //Takes the operation variable as input and determines the correct mathmatical operation to perform.
             switch (operation)
             {
@@ -105,13 +106,17 @@ namespace CSCI497_Calculator2
             afterEquals = false;
             }
 
+        //Initializes the MainWindow GUI Object
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        //Number Buttons
+
         private void Btn0_Click(object sender, RoutedEventArgs e)
         {
+            //calls function for number entries
             guiNumEntry(0);
         }
 
@@ -160,8 +165,11 @@ namespace CSCI497_Calculator2
             guiNumEntry(9);
         }
 
+        //Math operation Buttons
+
         private void BtnPlus_Click(object sender, RoutedEventArgs e)
         {
+            //calls function for operation entries
             guiOperationEntry("+");
         }
 
@@ -180,6 +188,7 @@ namespace CSCI497_Calculator2
             guiOperationEntry("/");
         }
 
+        //Equals for asking the calc for an answer
         private void BtnEquils_Click(object sender, RoutedEventArgs e)
         {
             
@@ -188,6 +197,8 @@ namespace CSCI497_Calculator2
             thisCalculator.Clear();
             
         }
+
+        //Button for clearing or resetting the calculator
 
         private void btnC_Click(object sender, RoutedEventArgs e)
         {
