@@ -19,14 +19,50 @@ namespace CSCI497_Calculator2
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
-    {
+    /// 
+
+    public class Calculator
+        {
         long number1 = 0;
         long number2 = 0;
-        double Results = 0;
-        String Operation = "";
-        bool IsOperation = false;
-        bool AfterEquals = false;
+        double results = 0;
+        public String operation {get; set;} = "";
+        public void NumEntry(long num_in)
+            {
+            if (operation != "")
+                {
+                number2 = num_in;
+                }
+            else
+                {
+                number1 = num_in;
+                }
+            }
+        public String Calculate()
+            {
+            switch (operation)
+            {
+                case "+":
+                    results = number1 + number2;
+                    break;
+                case "-":
+                    results = number1 - number2;
+                    break;
+                case "*":
+                    results = number1 * number2;
+                    break;
+                case "/":
+                    results = number1 / number2;
+                    break;
+
+                    
+            }//end switch
+            return results.ToString();
+            }
+        }
+    public partial class MainWindow : Window
+    {
+        Calculator thisCalculator = new Calculator();
 
         public MainWindow()
         {
@@ -35,228 +71,100 @@ namespace CSCI497_Calculator2
 
         private void Btn0_Click(object sender, RoutedEventArgs e)
         {
-            if((txtAnswers.Text == "0")||(IsOperation))
-            {
-                txtAnswers.Clear();
-            }
-            IsOperation = false;
-
-            if (!AfterEquals)
-                txtAnswers.Text = txtAnswers.Text + "0";
+            thisCalculator.NumEntry(0);
         }
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
         {
-            if ((txtAnswers.Text == "0") || (IsOperation))
-            {
-                txtAnswers.Clear();
-            }
-            IsOperation = false;
-
-            if (!AfterEquals)
-                txtAnswers.Text = txtAnswers.Text + "1";
+            thisCalculator.NumEntry(1);
         }
 
         private void Btn2_Click(object sender, RoutedEventArgs e)
         {
-            if ((txtAnswers.Text == "0") || (IsOperation))
-            {
-                txtAnswers.Clear();
-            }
-            IsOperation = false;
-
-            if (!AfterEquals)
-                txtAnswers.Text = txtAnswers.Text + "2";
+            thisCalculator.NumEntry(2);
         }
 
         private void Btn3_Click(object sender, RoutedEventArgs e)
         {
-            if ((txtAnswers.Text == "0") || (IsOperation))
-            {
-                txtAnswers.Clear();
-            }
-            IsOperation = false;
-
-            if (!AfterEquals)
-                txtAnswers.Text = txtAnswers.Text + "3";
+            thisCalculator.NumEntry(3);
         }
 
         private void Btn4_Click(object sender, RoutedEventArgs e)
         {
-            if ((txtAnswers.Text == "0") || (IsOperation))
-            {
-                txtAnswers.Clear();
-            }
-            IsOperation = false;
-
-            if (!AfterEquals)
-                txtAnswers.Text = txtAnswers.Text + "4";
+            thisCalculator.NumEntry(4);
         }
 
         private void Btn5_Click(object sender, RoutedEventArgs e)
         {
-            if ((txtAnswers.Text == "0") || (IsOperation))
-            {
-                txtAnswers.Clear();
-            }
-            IsOperation = false;
-
-            if (!AfterEquals)
-                txtAnswers.Text = txtAnswers.Text + "5";
+            thisCalculator.NumEntry(5);
         }
 
         private void Btn6_Click(object sender, RoutedEventArgs e)
         {
-            if ((txtAnswers.Text == "0") || (IsOperation))
-            {
-                txtAnswers.Clear();
-            }
-            IsOperation = false;
-
-            if (!AfterEquals)
-                txtAnswers.Text = txtAnswers.Text + "6";
+            thisCalculator.NumEntry(6);
         }
 
         private void Btn7_Click(object sender, RoutedEventArgs e)
         {
-            if ((txtAnswers.Text == "0") || (IsOperation))
-            {
-                txtAnswers.Clear();
-            }
-            IsOperation = false;
-
-            if (!AfterEquals)
-                txtAnswers.Text = txtAnswers.Text + "7";
+            thisCalculator.NumEntry(7);
         }
 
         private void Btn8_Click(object sender, RoutedEventArgs e)
         {
-            if ((txtAnswers.Text == "0") || (IsOperation))
-            {
-                txtAnswers.Clear();
-            }
-            IsOperation = false;
-
-            if(!AfterEquals)
-            txtAnswers.Text = txtAnswers.Text + "8";
+            thisCalculator.NumEntry(8);
         }
 
         private void Btn9_Click(object sender, RoutedEventArgs e)
         {
-            if ((txtAnswers.Text == "0") || (IsOperation))
-            {
-                txtAnswers.Clear();
-            }
-            IsOperation = false;
-
-            if (!AfterEquals)
-            txtAnswers.Text = txtAnswers.Text + "9";
+            thisCalculator.NumEntry(9);
         }
 
         private void BtnPlus_Click(object sender, RoutedEventArgs e)
         {
-            Operation = "+";
-            Results = double.Parse(txtAnswers.Text);
-            IsOperation = true;
-
-            AfterEquals = false;
+            thisCalculator.operation = "+";
         }
 
         private void BtnMinus_Click(object sender, RoutedEventArgs e)
         {
-            Operation = "-";
-            Results = double.Parse(txtAnswers.Text);
-            IsOperation = true;
-
-            AfterEquals = false;
+            thisCalculator.operation = "-";
         }
 
         private void BtnTimes_Click(object sender, RoutedEventArgs e)
         {
-            Operation = "*";
-            Results = double.Parse(txtAnswers.Text);
-            IsOperation = true;
-
-            AfterEquals = false;
+            thisCalculator.operation = "*";
         }
 
         private void BtnDivide_Click(object sender, RoutedEventArgs e)
         {
-            Operation = "/";
-            Results = double.Parse(txtAnswers.Text);
-            IsOperation = true;
-
-            AfterEquals = false;
+            thisCalculator.operation = "/";
         }
 
         private void BtnEquils_Click(object sender, RoutedEventArgs e)
         {
             
-            switch (Operation)
-            {
-                case "+":
-                    txtAnswers.Text = (Results + double.Parse(txtAnswers.Text)).ToString();
-                    break;
-                case "-":
-                    txtAnswers.Text = (Results - double.Parse(txtAnswers.Text)).ToString();
-                    break;
-                case "*":
-                    txtAnswers.Text = (Results * double.Parse(txtAnswers.Text)).ToString();
-                    break;
-                case "/":
-                    txtAnswers.Text = (Results / double.Parse(txtAnswers.Text)).ToString();
-                    break;
-
-                    
-            }//end switch
-            AfterEquals = true;
+            txtAnswers.Text = thisCalculator.Calculate();
             
         }
 
         private void btnC_Click(object sender, RoutedEventArgs e)
         {
-            txtAnswers.Text = "0";
-            Results = 0;
-            AfterEquals = false;
+
         }
 
         private void BtnPostiveNegative_Click(object sender, RoutedEventArgs e)
         {
-            if((txtAnswers.Text == "0") || (IsOperation))
-            {
-                number1 *= -1;
-                txtAnswers.Text  = number1.ToString();
-            }
 
-            else
-            {
-                number2 *= -2;
-                txtAnswers.Text = number2.ToString();
-            }
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
-            
-            {
-                txtAnswers.Clear();
-            }
 
 
         }
 
         private void btnCE_Click(object sender, RoutedEventArgs e)
         {
-            if ((txtAnswers.Text == "0") || (IsOperation))
-            {
-                number1 = 0;
-            }
-            else
-            {
-                number2 = 0;
-            }
-            txtAnswers.Text = "0";
-            AfterEquals = false;
+
         }
     }
 }
