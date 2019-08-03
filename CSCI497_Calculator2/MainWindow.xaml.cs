@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 namespace CSCI497_Calculator2
 {
     //Dustin Made a change ***********************************************************
+    //Brent Made a change
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
