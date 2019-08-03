@@ -5,7 +5,7 @@ namespace CSCI497_Calculator2
 {
 
     //Brents revision of code for separation of Calculator Logic from UI
-    //Branch Test
+    //Alpha version with Comments
     //Calulator class encapsulates all mathematical logic separate from the UI
     public class Calculator
         {
