@@ -157,9 +157,19 @@ namespace CSCI497_Calculator2
 
         }
 
+        //Clears only the number that you are currently working on.
         private void btnCE_Click(object sender, RoutedEventArgs e)
         {
-
+            if(thisCalculator.number2 != "")
+            {
+                txtAnswers.Clear();
+                thisCalculator.number2 = "";
+            }
+            else
+            {
+                thisCalculator.number1 = "";
+                txtAnswers.Clear();
+            }
         }
     }
 }
