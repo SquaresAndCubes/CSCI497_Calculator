@@ -9,32 +9,32 @@ namespace CSCI497_Calculator2
     //Calulator class encapsulates all mathematical logic separate from the UI
     public class Calculator
         {
-        String number1 = "";
-        String number2 = "";
-        double results = 0;
-        public String operation = "";
 
+        public bool afterEquals = false;
+        public String entry = "";
+        public double results = 0;
+        public String operation = "";
+        
         //resets the calculator
         public void Clear()
         {
-            number1 = "";
-            number2 = "";
-            results = 0;
+            entry = "";
+            
             operation = "";
         }
+        //puts first number input as result
+        public void SetResult()
+            {
+            results = Double.Parse(entry);
+            entry = "";
+            }
         //function for calculator to know what the first and second numbers are based on whether there has been
         //any operator input yet
         public void NumEntry(String num_in)
             {
-            if (operation != "")
-                {
-                number2 = number2 + num_in;
-                }
-            else
-                {
-                number1 = number1 + num_in;
-                }
+            entry = entry + num_in;
             }
+        
         public String Calculate()
             {
 
@@ -42,30 +42,30 @@ namespace CSCI497_Calculator2
             switch (operation)
             {
                 case "+":
-                    results = double.Parse(number1) + double.Parse(number2);
+                    results = results + Double.Parse(entry);
                     break;
                 case "-":
-                    results = double.Parse(number1) - double.Parse(number2);
+                    results = results - Double.Parse(entry);
                     break;
                 case "*":
-                    results = double.Parse(number1) * double.Parse(number2);
+                    results = results * Double.Parse(entry);
                     break;
                 case "/":
-                    results = double.Parse(number1) / double.Parse(number2);
+                    results = results / Double.Parse(entry);
                     break;
-
                     
             }//end switch
-            //Returns the answer as string
-            return results.ToString();
+            afterEquals = true;
             //Clears variables to get ready for next operation
             Clear();
+            //Returns the answer as string
+            return results.ToString();
+            
+            
             }
         }
     public partial class MainWindow : Window
     {
-        bool isOperation = false;
-        bool afterEquals = false;
 
         //Create new object instance of Calculator class
         Calculator thisCalculator = new Calculator();
@@ -73,9 +73,11 @@ namespace CSCI497_Calculator2
         ///Function to pass numbers from GUI to Calculator Class and display input to GUI screen
         void guiNumEntry(int num)
             {
-            isOperation = false;
             //when user types in number after equals this clears the screen
-
+            if(thisCalculator.afterEquals == true)
+                {
+                txtAnswers.Clear();
+                }
             //calls Calculator to pass it numbers for entry to the operation.
             thisCalculator.NumEntry(num.ToString());
             txtAnswers.Text = txtAnswers.Text + num.ToString();
@@ -85,10 +87,9 @@ namespace CSCI497_Calculator2
         //function for operation function of GUI
         void guiOperationEntry(String oper)
             {
+            thisCalculator.SetResult();
             thisCalculator.operation = oper;
             txtAnswers.Clear();
-            isOperation = true;
-            
             }
 
         //Initializes the MainWindow GUI Object
@@ -176,11 +177,7 @@ namespace CSCI497_Calculator2
         //Equals for asking the calc for an answer
         private void BtnEquils_Click(object sender, RoutedEventArgs e)
         {
-            
             txtAnswers.Text = thisCalculator.Calculate();
-            afterEquals = true;
-            thisCalculator.Clear();
-            
         }
 
         //Button for clearing or resetting the calculator
@@ -198,7 +195,6 @@ namespace CSCI497_Calculator2
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
-
 
         }
 
