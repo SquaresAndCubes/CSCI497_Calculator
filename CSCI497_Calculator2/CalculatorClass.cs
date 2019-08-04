@@ -11,9 +11,6 @@ using System.Windows;
 
 namespace CSCI497_Calculator2
 {
-    //Brents revision of code for separation of Calculator Logic from UI
-    
-
     //##################################################################################################//
     //######################### CALCULATOR CLASS (LOGIC ONLY) ##########################################//
     //##################################################################################################//
@@ -47,7 +44,6 @@ namespace CSCI497_Calculator2
         }
         public String Calculate()
         {
-
             //Takes the operation variable as input and determines the correct mathmatical operation to perform.
             switch (operation)
             {
@@ -70,7 +66,6 @@ namespace CSCI497_Calculator2
             Clear();
             //Returns the answer as string
             return results.ToString();
-
         }
     }
 }
