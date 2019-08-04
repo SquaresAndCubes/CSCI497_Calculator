@@ -1,12 +1,23 @@
-﻿using System;
+﻿//CSCI497 Capstone
+//Davenport University
+//Summer 2019 Semester
+//Prof. Brian Kowalczk
+//Team 1
+//Calculator w/ Loose Coupling Implementation
+
+//Import dependencies
+using System;
 using System.Windows;
 
 namespace CSCI497_Calculator2
 {
-
     //Brents revision of code for separation of Calculator Logic from UI
     //Alpha version with Comments
     //Calulator class encapsulates all mathematical logic separate from the UI
+
+    //##################################################################################################//
+    //######################### CALCULATOR CLASS (LOGIC ONLY) ##########################################//
+    //##################################################################################################//
     public class Calculator
         {
         public String number1 = "";
@@ -63,11 +74,19 @@ namespace CSCI497_Calculator2
             
             }
         }
+
+    //##################################################################################################//
+    //##################### MAINWINDOW CLASS (USER INTERFACE) ##########################################//
+    //##################################################################################################//
+
     public partial class MainWindow : Window
     {
 
-        //Create new object instance of Calculator class
+        //############### CREATE NEW OBJECT INSTANCE OF CALCULATOR CLASS ########################
         Calculator thisCalculator = new Calculator();
+        //#######################################################################################
+
+        //################# FUNCTIONS FOR BUTTON ENTRIES ########################################
 
         ///Function to pass numbers from GUI to Calculator Class and display input to GUI screen
         void guiNumEntry(int num)
@@ -80,15 +99,16 @@ namespace CSCI497_Calculator2
             //calls Calculator to pass it numbers for entry to the operation.
             thisCalculator.NumEntry(num.ToString());
             txtAnswers.Text = txtAnswers.Text + num.ToString();
+            thisCalculator.afterEquals = false;
             }
 
-        //function for operation function of GUI
+        //function for all operation buttons of GUI
         void guiOperationEntry(String oper)
             {
             thisCalculator.operation = oper;
             txtAnswers.Clear();
-            
             }
+        //######################## END FUNCTIONS FOR BUTTON ENTRIES ################################
 
         //Initializes the MainWindow GUI Object
         public MainWindow()
@@ -96,7 +116,7 @@ namespace CSCI497_Calculator2
             InitializeComponent();
         }
 
-        //Number Buttons
+        //############################### NUMBER BUTTONS ##########################################//
 
         private void Btn0_Click(object sender, RoutedEventArgs e)
         {
@@ -149,7 +169,10 @@ namespace CSCI497_Calculator2
             guiNumEntry(9);
         }
 
-        //Math operation Buttons
+        //####################### END NUMBER BUTTONS ############################################
+
+        
+        //##################### MATH OPERATION BUTTONS ##########################################
 
         private void BtnPlus_Click(object sender, RoutedEventArgs e)
         {
@@ -172,7 +195,7 @@ namespace CSCI497_Calculator2
             guiOperationEntry("/");
         }
 
-        //Equals for asking the calc for an answer
+        //################ PERFORM CALCULATON BUTTON (EQUALS) ####################################
         private void BtnEquils_Click(object sender, RoutedEventArgs e)
         {
             if(thisCalculator.number1 != "" && thisCalculator.number2 != "" && thisCalculator.operation != "")
@@ -183,17 +206,19 @@ namespace CSCI497_Calculator2
                 }
         }
 
-        //Button for clearing or resetting the calculator
+                private void BtnPostiveNegative_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        //######################### END MATH OPERATION BUTTONS ###################################
+
+        //####################### BUTTONS FOR CLEARING AND BACKSPACE ###############################
 
         private void btnC_Click(object sender, RoutedEventArgs e)
         {
             txtAnswers.Clear();
             thisCalculator.Clear();
-        }
-
-        private void BtnPostiveNegative_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
