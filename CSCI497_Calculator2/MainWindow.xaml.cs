@@ -25,7 +25,7 @@ namespace CSCI497_Calculator2
         ///Function to pass numbers from GUI to Calculator Class and display input to GUI screen
         void guiNumEntry(int num)
             {
-            //checks to see if an calculation has been performed if so a number button will clear screen
+            //checks to see if any calculation has been performed if so a number button will clear screen
             if(thisCalculator.afterEquals == true)
                 {
                 txtAnswers.Clear();
@@ -152,9 +152,15 @@ namespace CSCI497_Calculator2
             thisCalculator.Clear();
         }
 
+        //Backspace current entry
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
-
+            if(thisCalculator.afterEquals == false)
+            {
+                thisCalculator.Backspace();
+                txtAnswers.Text = txtAnswers.Text.Remove(txtAnswers.Text.Length - 1, 1);
+            }
+            
         }
 
         //Clears only the number that you are currently working on.

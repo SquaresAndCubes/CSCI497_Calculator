@@ -79,5 +79,22 @@ namespace CSCI497_Calculator2
                 number1 = "";
             }
         }
+
+        //function backspaces the current entry
+        public void Backspace()
+        {
+            if(afterEquals == false)
+            {
+                if (number2 != "")
+                {
+                    number2 = number2.Remove(number2.Length - 1, 1);
+                }
+                else
+                {
+                    number1 = number1.Remove(number1.Length - 1, 1);
+                }
+            }
+
+        }
     }
 }
