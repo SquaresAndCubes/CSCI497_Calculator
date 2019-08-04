@@ -9,17 +9,17 @@ namespace CSCI497_Calculator2
     //Calulator class encapsulates all mathematical logic separate from the UI
     public class Calculator
         {
-        String number1 = "";
-        String number2 = "";
+        public String number1 = "";
+        public String number2 = "";
         double results = 0;
         public String operation = "";
+        public bool afterEquals = false;
 
         //resets the calculator
         public void Clear()
         {
             number1 = "";
             number2 = "";
-            results = 0;
             operation = "";
         }
         //function for calculator to know what the first and second numbers are based on whether there has been
@@ -53,19 +53,18 @@ namespace CSCI497_Calculator2
                 case "/":
                     results = double.Parse(number1) / double.Parse(number2);
                     break;
-
                     
             }//end switch
-            //Returns the answer as string
-            return results.ToString();
+            
             //Clears variables to get ready for next operation
             Clear();
+            //Returns the answer as string
+            return results.ToString();
+            
             }
         }
     public partial class MainWindow : Window
     {
-        bool isOperation = false;
-        bool afterEquals = false;
 
         //Create new object instance of Calculator class
         Calculator thisCalculator = new Calculator();
@@ -73,13 +72,14 @@ namespace CSCI497_Calculator2
         ///Function to pass numbers from GUI to Calculator Class and display input to GUI screen
         void guiNumEntry(int num)
             {
-            isOperation = false;
-            //when user types in number after equals this clears the screen
-
+            //checks to see if an calculation has been performed if so a number button will clear screen
+            if(thisCalculator.afterEquals == true)
+                {
+                txtAnswers.Clear();
+                }
             //calls Calculator to pass it numbers for entry to the operation.
             thisCalculator.NumEntry(num.ToString());
             txtAnswers.Text = txtAnswers.Text + num.ToString();
-            
             }
 
         //function for operation function of GUI
@@ -87,7 +87,6 @@ namespace CSCI497_Calculator2
             {
             thisCalculator.operation = oper;
             txtAnswers.Clear();
-            isOperation = true;
             
             }
 
@@ -176,11 +175,12 @@ namespace CSCI497_Calculator2
         //Equals for asking the calc for an answer
         private void BtnEquils_Click(object sender, RoutedEventArgs e)
         {
-            
-            txtAnswers.Text = thisCalculator.Calculate();
-            afterEquals = true;
-            thisCalculator.Clear();
-            
+            if(thisCalculator.number1 != "" && thisCalculator.number2 != "" && thisCalculator.operation != "")
+                {
+                txtAnswers.Text = thisCalculator.Calculate();
+                thisCalculator.afterEquals = true;
+                thisCalculator.Clear();
+                }
         }
 
         //Button for clearing or resetting the calculator
@@ -198,7 +198,6 @@ namespace CSCI497_Calculator2
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
-
 
         }
 
