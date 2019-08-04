@@ -190,3 +190,12 @@ git_stats/*
 StyleCop.Cache
 bin
 obj
+.vs/CSCI497_Calculator2/v16/Server/sqlite3/storage.ide-wal
+.vs/CSCI497_Calculator2/v16/Server/sqlite3/storage.ide-shm
+.vs/CSCI497_Calculator2/v16/Server/sqlite3/storage.ide
+.vs/CSCI497_Calculator2/v16/Server/sqlite3/db.lock
+.vs/CSCI497_Calculator2/v15/Server/sqlite3/storage.ide-wal
+.vs/CSCI497_Calculator2/v15/Server/sqlite3/storage.ide-shm
+.vs/CSCI497_Calculator2/v15/Server/sqlite3/storage.ide
+.vs/CSCI497_Calculator2/v15/Server/sqlite3/db.lock
+.vs/CSCI497_Calculator2/DesignTimeBuild/.dtbcache
