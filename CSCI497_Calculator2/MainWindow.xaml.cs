@@ -6,6 +6,9 @@ namespace CSCI497_Calculator2
     //Brents revision of code for separation of Calculator Logic from UI
     //Alpha version with Comments
     //Calulator class encapsulates all mathematical logic separate from the UI
+
+    //#########################CLASS CALCULATOR (LOGIC ONLY)#######################################
+    //#############################################################################################
     public class Calculator
         {
 
@@ -63,6 +66,12 @@ namespace CSCI497_Calculator2
             //nothing will run here because of ^ return above
             }
         }
+
+
+   
+    //################################################################################################  
+    //##################### MAINWINDOW CLASS / USER INTERFACE ##########################################
+    //##################################################################################################
     public partial class MainWindow : Window
     {
 
