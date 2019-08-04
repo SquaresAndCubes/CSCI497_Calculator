@@ -67,5 +67,17 @@ namespace CSCI497_Calculator2
             //Returns the answer as string
             return results.ToString();
         }
+        //funcion clears current entry
+        public void ClearCE()
+        {
+            if (number2 != "")
+            {
+                number2 = "";
+            }
+            else
+            {
+                number1 = "";
+            }
+        }
     }
 }
