@@ -11,83 +11,17 @@ using System.Windows;
 
 namespace CSCI497_Calculator2
 {
-    //Brents revision of code for separation of Calculator Logic from UI
-    //Alpha version with Comments
-    //Calulator class encapsulates all mathematical logic separate from the UI
-
-    //##################################################################################################//
-    //######################### CALCULATOR CLASS (LOGIC ONLY) ##########################################//
-    //##################################################################################################//
-    public class Calculator
-        {
-        public String number1 = "";
-        public String number2 = "";
-        double results = 0;
-        public String operation = "";
-        public bool afterEquals = false;
-
-        //resets the calculator
-        public void Clear()
-        {
-            number1 = "";
-            number2 = "";
-            operation = "";
-        }
-        //function for calculator to know what the first and second numbers are based on whether there has been
-        //any operator input yet
-        public void NumEntry(String num_in)
-            {
-            if (operation != "")
-                {
-                number2 = number2 + num_in;
-                }
-            else
-                {
-                number1 = number1 + num_in;
-                }
-            }
-        public String Calculate()
-            {
-
-            //Takes the operation variable as input and determines the correct mathmatical operation to perform.
-            switch (operation)
-            {
-                case "+":
-                    results = double.Parse(number1) + double.Parse(number2);
-                    break;
-                case "-":
-                    results = double.Parse(number1) - double.Parse(number2);
-                    break;
-                case "*":
-                    results = double.Parse(number1) * double.Parse(number2);
-                    break;
-                case "/":
-                    results = double.Parse(number1) / double.Parse(number2);
-                    break;
-                    
-            }//end switch
-            
-            //Clears variables to get ready for next operation
-            Clear();
-            //Returns the answer as string
-            return results.ToString();
-            
-            }
-        }
-
     //##################################################################################################//
     //##################### MAINWINDOW CLASS (USER INTERFACE) ##########################################//
     //##################################################################################################//
 
     public partial class MainWindow : Window
     {
-
         //############### CREATE NEW OBJECT INSTANCE OF CALCULATOR CLASS ########################
         Calculator thisCalculator = new Calculator();
         //#######################################################################################
 
         //################# FUNCTIONS FOR BUTTON ENTRIES ########################################
-
         ///Function to pass numbers from GUI to Calculator Class and display input to GUI screen
         void guiNumEntry(int num)
             {
@@ -117,7 +51,6 @@ namespace CSCI497_Calculator2
         }
 
         //############################### NUMBER BUTTONS ##########################################//
-
         private void Btn0_Click(object sender, RoutedEventArgs e)
         {
             //calls function for number entries
@@ -173,7 +106,6 @@ namespace CSCI497_Calculator2
 
         
         //##################### MATH OPERATION BUTTONS ##########################################
-
         private void BtnPlus_Click(object sender, RoutedEventArgs e)
         {
             //calls function for operation entries
@@ -210,11 +142,10 @@ namespace CSCI497_Calculator2
         {
 
         }
-
         //######################### END MATH OPERATION BUTTONS ###################################
 
-        //####################### BUTTONS FOR CLEARING AND BACKSPACE ###############################
 
+        //####################### BUTTONS FOR CLEARING AND BACKSPACE ###############################
         private void btnC_Click(object sender, RoutedEventArgs e)
         {
             txtAnswers.Clear();

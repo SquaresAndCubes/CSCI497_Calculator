@@ -202,3 +202,6 @@ StyleCop.Cache
 bin
 obj
 /.vs/slnx.sqlite~1082a9c... Gitignore Test
+/.vs/CSCI497_Calculator2/v16/Server/sqlite3/storage.ide-shm
+/.vs/CSCI497_Calculator2/v16/Server/sqlite3/storage.ide-wal
+CSCI497_Calculator2/CSCI497_Calculator2.csproj
