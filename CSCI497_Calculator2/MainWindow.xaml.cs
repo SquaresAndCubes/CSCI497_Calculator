@@ -3,7 +3,6 @@ using System.Windows;
 
 namespace CSCI497_Calculator2
 {
-
     //Brents revision of code for separation of Calculator Logic from UI
     //Alpha version with Comments
     //Calulator class encapsulates all mathematical logic separate from the UI
@@ -19,17 +18,17 @@ namespace CSCI497_Calculator2
         public void Clear()
         {
             entry = "";
-            
             operation = "";
         }
+
         //puts first number input as result
         public void SetResult()
             {
             results = Double.Parse(entry);
             entry = "";
             }
-        //function for calculator to know what the first and second numbers are based on whether there has been
-        //any operator input yet
+
+        //function for number entry appends input to entry string
         public void NumEntry(String num_in)
             {
             entry = entry + num_in;
@@ -55,13 +54,13 @@ namespace CSCI497_Calculator2
                     break;
                     
             }//end switch
+
             afterEquals = true;
             //Clears variables to get ready for next operation
             Clear();
             //Returns the answer as string
             return results.ToString();
-            
-            
+            //nothing will run here because of ^ return above
             }
         }
     public partial class MainWindow : Window
@@ -81,7 +80,6 @@ namespace CSCI497_Calculator2
             //calls Calculator to pass it numbers for entry to the operation.
             thisCalculator.NumEntry(num.ToString());
             txtAnswers.Text = txtAnswers.Text + num.ToString();
-            
             }
 
         //function for operation function of GUI
@@ -190,17 +188,17 @@ namespace CSCI497_Calculator2
 
         private void BtnPostiveNegative_Click(object sender, RoutedEventArgs e)
         {
-
+            //to be added
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
-
+            //to be added
         }
 
         private void btnCE_Click(object sender, RoutedEventArgs e)
         {
-
+            //to be added
         }
     }
 }
