@@ -15,6 +15,8 @@ namespace CSCI497_Calculator2
     //##################### MAINWINDOW CLASS (USER INTERFACE) ##########################################//
     //##################################################################################################//
 
+
+        //fjiwojfie//
     public partial class MainWindow : Window
     {
         //############### CREATE NEW OBJECT INSTANCE OF CALCULATOR CLASS ########################
