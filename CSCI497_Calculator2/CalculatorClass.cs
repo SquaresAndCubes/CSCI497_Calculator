@@ -17,6 +17,7 @@ namespace CSCI497_Calculator2
     {
         public String number1 = "";
         public String number2 = "";
+        public String zeroDivide = "Can't Divide by Zero";
         double posNeg = 0;
         double results = 0;
         public String operation = "";
@@ -57,7 +58,16 @@ namespace CSCI497_Calculator2
                     results = double.Parse(number1) * double.Parse(number2);
                     break;
                 case "/":
-                    results = double.Parse(number1) / double.Parse(number2);
+
+                    if(number2 == "0")
+                    {
+                        return zeroDivide;
+                    }
+                    else
+                    {
+                        results = double.Parse(number1) / double.Parse(number2);
+                    }
+                    
                     break;
 
             }//end switch
