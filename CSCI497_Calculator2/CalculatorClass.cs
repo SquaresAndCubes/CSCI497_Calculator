@@ -17,7 +17,7 @@ namespace CSCI497_Calculator2
     {
         public String number1 = "";
         public String number2 = "";
-        public String zeroDivide = "Can't Divide by Zero";
+        public String zeroDivide = "Can't / by Zero";
         double posNeg = 0;
         double results = 0;
         public String operation = "";
