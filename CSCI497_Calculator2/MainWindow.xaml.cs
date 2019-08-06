@@ -140,10 +140,7 @@ namespace CSCI497_Calculator2
                 }
         }
 
-                private void BtnPostiveNegative_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+              
         //######################### END MATH OPERATION BUTTONS ###################################
 
 
@@ -172,6 +169,11 @@ namespace CSCI497_Calculator2
             thisCalculator.ClearCE();
             //clears screen
             txtAnswers.Clear();
+        }
+
+        private void BtnPositiveNegative_Click(object sender, RoutedEventArgs e)
+        {
+            txtAnswers.Text = thisCalculator.PosNag();
         }
     }
 }

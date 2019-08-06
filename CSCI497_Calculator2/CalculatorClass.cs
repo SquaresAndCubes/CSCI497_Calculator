@@ -17,6 +17,7 @@ namespace CSCI497_Calculator2
     {
         public String number1 = "";
         public String number2 = "";
+        double posNeg = 0;
         double results = 0;
         public String operation = "";
         public bool afterEquals = false;
@@ -94,6 +95,38 @@ namespace CSCI497_Calculator2
                 }
             }
 
+        }
+        public String PosNag()
+        {
+            
+                if(number2 != "")
+                {
+                    posNeg = double.Parse(number2) * -1;
+
+                    number2 = Convert.ToString(posNeg);
+
+                    posNeg = 0;
+
+                    return number2.ToString();
+                }
+                else if(results != 0)
+            {
+                results = results * -1;
+
+                return results.ToString();
+            }
+                else
+                {
+                    posNeg = double.Parse(number1) * -1;
+
+                    number1 = Convert.ToString(posNeg);
+
+                    posNeg = 0;
+
+                    return number1.ToString();
+                }
+                
+           
         }
     }
 }
