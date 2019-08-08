@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CSCI497_Calculator2"
         mc:Ignorable="d"
         Title="CSCI497 Calculator" Height="399" Width="257.907">
-    <Grid>
+    <Grid x:Name="textBox1_KeyPress">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="145*"/>
             <ColumnDefinition Width="106*"/>
@@ -30,7 +30,7 @@
         <Button x:Name="btnTimes" Content="*" HorizontalAlignment="Left" Margin="40.2,202,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="BtnTimes_Click" Grid.Column="1"/>
         <Button x:Name="btnDivide" Content="/" HorizontalAlignment="Left" Margin="40.2,255,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="BtnDivide_Click" Grid.Column="1"/>
         <Button x:Name="btnEquils" Content="=" HorizontalAlignment="Left" Margin="40.2,308,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="BtnEquils_Click" Grid.Column="1"/>
-        <TextBox x:Name="txtAnswers" HorizontalAlignment="Left" Height="39" Margin="10,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="226" FontSize="24" FontWeight="Bold" TextAlignment="Right" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtAnswers" HorizontalAlignment="Left" Height="39" Margin="10,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="226" FontSize="24" FontWeight="Bold" TextAlignment="Right" Grid.ColumnSpan="2" IsReadOnly="True"/>
 
     </Grid>
 </Window>

@@ -176,4 +176,5 @@ namespace CSCI497_Calculator2
             txtAnswers.Text = thisCalculator.PosNag();
         }
     }
+    
 }
