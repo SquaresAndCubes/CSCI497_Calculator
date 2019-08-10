@@ -15,6 +15,8 @@ namespace CSCI497_Calculator2
     //##################### MAINWINDOW CLASS (USER INTERFACE) ##########################################//
     //##################################################################################################//
 
+
+        //fjiwojfie//
     public partial class MainWindow : Window
     {
         //############### CREATE NEW OBJECT INSTANCE OF CALCULATOR CLASS ########################
@@ -138,10 +140,7 @@ namespace CSCI497_Calculator2
                 }
         }
 
-                private void BtnPostiveNegative_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+              
         //######################### END MATH OPERATION BUTTONS ###################################
 
 
@@ -158,7 +157,15 @@ namespace CSCI497_Calculator2
             if(thisCalculator.afterEquals == false)
             {
                 thisCalculator.Backspace();
-                txtAnswers.Text = txtAnswers.Text.Remove(txtAnswers.Text.Length - 1, 1);
+                if(txtAnswers.Text == "")
+                {
+                    txtAnswers.Text = "";
+                }
+                else
+                {
+                    txtAnswers.Text = txtAnswers.Text.Remove(txtAnswers.Text.Length - 1, 1);
+                }
+                
             }
             
         }
@@ -171,5 +178,11 @@ namespace CSCI497_Calculator2
             //clears screen
             txtAnswers.Clear();
         }
+
+        private void BtnPositiveNegative_Click(object sender, RoutedEventArgs e)
+        {
+            txtAnswers.Text = thisCalculator.PosNag();
+        }
     }
+    
 }

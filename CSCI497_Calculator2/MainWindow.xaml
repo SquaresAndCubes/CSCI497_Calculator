@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CSCI497_Calculator2"
         mc:Ignorable="d"
         Title="CSCI497 Calculator" Height="399" Width="257.907">
-    <Grid>
+    <Grid x:Name="textBox1_KeyPress">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="145*"/>
             <ColumnDefinition Width="106*"/>
@@ -15,7 +15,7 @@
         <Button x:Name="btn7" Content="7" HorizontalAlignment="Left" Margin="10,149,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="Btn7_Click"/>
         <Button x:Name="btn4" Content="4" HorizontalAlignment="Left" Margin="10,202,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="Btn4_Click"/>
         <Button x:Name="btn1" Content="1" HorizontalAlignment="Left" Margin="10,255,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="Btn1_Click"/>
-        <Button x:Name="btnPositiveNegative" Content="+-" HorizontalAlignment="Left" Margin="10,308,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14"/>
+        <Button x:Name="btnPositiveNegative" Content="+-" HorizontalAlignment="Left" Margin="10,308,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="BtnPositiveNegative_Click"/>
         <Button x:Name="btnC" Content="C" HorizontalAlignment="Left" Margin="68,96,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="btnC_Click"/>
         <Button x:Name="btn8" Content="8" HorizontalAlignment="Left" Margin="68,149,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="Btn8_Click"/>
         <Button x:Name="btn5" Content="5" HorizontalAlignment="Left" Margin="68,202,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="Btn5_Click"/>
@@ -30,7 +30,7 @@
         <Button x:Name="btnTimes" Content="*" HorizontalAlignment="Left" Margin="40.2,202,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="BtnTimes_Click" Grid.Column="1"/>
         <Button x:Name="btnDivide" Content="/" HorizontalAlignment="Left" Margin="40.2,255,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="BtnDivide_Click" Grid.Column="1"/>
         <Button x:Name="btnEquils" Content="=" HorizontalAlignment="Left" Margin="40.2,308,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="BtnEquils_Click" Grid.Column="1"/>
-        <TextBox x:Name="txtAnswers" HorizontalAlignment="Left" Height="39" Margin="10,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="226" FontSize="24" FontWeight="Bold" TextAlignment="Right" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtAnswers" HorizontalAlignment="Left" Height="39" Margin="10,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="226" FontSize="24" FontWeight="Bold" TextAlignment="Right" Grid.ColumnSpan="2" IsReadOnly="True"/>
 
     </Grid>
 </Window>
