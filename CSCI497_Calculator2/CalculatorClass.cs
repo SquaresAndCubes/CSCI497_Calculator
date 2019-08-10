@@ -8,6 +8,7 @@
 //Import dependencies
 using System;
 
+
 namespace CSCI497_Calculator2
 {
     //##################################################################################################//
@@ -15,85 +16,16 @@ namespace CSCI497_Calculator2
     //##################################################################################################//
     public class Calculator
     {
-        public String number1 = "";
-        public String number2 = "";
-        double results = 0;
-        public String operation = "";
-        public bool afterEquals = false;
 
-        //resets the calculator
-        public void Clear()
-        {
-            number1 = "";
-            number2 = "";
-            operation = "";
-        }
-        //function for calculator to know what the first and second numbers are based on whether there has been
-        //any operator input yet
-        public void NumEntry(String num_in)
-        {
-            if (operation != "")
-            {
-                number2 = number2 + num_in;
-            }
-            else
-            {
-                number1 = number1 + num_in;
-            }
-        }
-        public String Calculate()
-        {
-            //Takes the operation variable as input and determines the correct mathmatical operation to perform.
-            switch (operation)
-            {
-                case "+":
-                    results = double.Parse(number1) + double.Parse(number2);
-                    break;
-                case "-":
-                    results = double.Parse(number1) - double.Parse(number2);
-                    break;
-                case "*":
-                    results = double.Parse(number1) * double.Parse(number2);
-                    break;
-                case "/":
-                    results = double.Parse(number1) / double.Parse(number2);
-                    break;
+        System.Data.DataTable dataTable = new System.Data.DataTable();
 
-            }//end switch
+        public String Calculate(String eval)
+        {
 
-            //Clears variables to get ready for next operation
-            Clear();
+            
             //Returns the answer as string
-            return results.ToString();
+            return dataTable.Compute(eval, null).ToString();
         }
-        //funcion clears current entry
-        public void ClearCE()
-        {
-            if (number2 != "")
-            {
-                number2 = "";
-            }
-            else
-            {
-                number1 = "";
-            }
-        }
-
-        //function backspaces the current entry
-        public void Backspace()
-        {
-            if(afterEquals == false)
-            {
-                if (number2 != "")
-                {
-                    number2 = number2.Remove(number2.Length - 1, 1);
-                }
-                else
-                {
-                    number1 = number1.Remove(number1.Length - 1, 1);
-                }
-            }
 
         }
     }
-}
