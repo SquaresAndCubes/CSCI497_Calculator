@@ -16,15 +16,11 @@ namespace CSCI497_Calculator2
     //##################################################################################################//
     public class Calculator
     {
-
         System.Data.DataTable dataTable = new System.Data.DataTable();
-
         public String Calculate(String eval)
         {
-            
             //Returns the answer as string
             return dataTable.Compute(eval, null).ToString();
         }
-
         }
     }
