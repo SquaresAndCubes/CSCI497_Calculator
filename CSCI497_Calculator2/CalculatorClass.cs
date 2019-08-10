@@ -29,6 +29,8 @@ namespace CSCI497_Calculator2
             number1 = "";
             number2 = "";
             operation = "";
+            
+
         }
         //function for calculator to know what the first and second numbers are based on whether there has been
         //any operator input yet
@@ -49,7 +51,10 @@ namespace CSCI497_Calculator2
             switch (operation)
             {
                 case "+":
-                    results = double.Parse(number1) + double.Parse(number2);
+                    
+                        results = double.Parse(number1) + double.Parse(number2);
+                    
+                    
                     break;
                 case "-":
                     results = double.Parse(number1) - double.Parse(number2);
@@ -59,7 +64,7 @@ namespace CSCI497_Calculator2
                     break;
                 case "/":
 
-                    if(number2 == "0")
+                    if(number2 == "0")//Writes out to the textbox to tell the user that they can not divide by zero.
                     {
                         return zeroDivide;
                     }
@@ -73,9 +78,14 @@ namespace CSCI497_Calculator2
             }//end switch
 
             //Clears variables to get ready for next operation
-            Clear();
+             Clear();
+            
+            
+
             //Returns the answer as string
+            
             return results.ToString();
+            
         }
         //funcion clears current entry
         public void ClearCE()
@@ -95,20 +105,40 @@ namespace CSCI497_Calculator2
         {
             if(afterEquals == false)
             {
+                
                 if (number2 != "")
                 {
                     number2 = number2.Remove(number2.Length - 1, 1);
+                    
+                }
+                else if (number1 != "" && number2 == "")
+                {
+                    operation = "";
+                   
+                }
+                else if (number1 == "")
+                {
+                    number1 = "";
+                   
                 }
                 else
                 {
                     number1 = number1.Remove(number1.Length - 1, 1);
+                    
                 }
             }
 
         }
-        public String PosNag()
+        public String PosNag()//Function to change the value of the current number the user is on to positive and negative.
         {
-            
+            if(number1 == "" && results == 0)
+            {
+                return number1 = number1 + "-";
+            }
+            else if(number1 == "-")
+            {
+                return number1 = "";
+            }
                 if(number2 != "")
                 {
                     posNeg = double.Parse(number2) * -1;
@@ -120,11 +150,11 @@ namespace CSCI497_Calculator2
                     return number2.ToString();
                 }
                 else if(results != 0)
-            {
+                { 
                 results = results * -1;
 
                 return results.ToString();
-            }
+                }
                 else
                 {
                     posNeg = double.Parse(number1) * -1;

@@ -157,7 +157,15 @@ namespace CSCI497_Calculator2
             if(thisCalculator.afterEquals == false)
             {
                 thisCalculator.Backspace();
-                txtAnswers.Text = txtAnswers.Text.Remove(txtAnswers.Text.Length - 1, 1);
+                if(txtAnswers.Text == "")
+                {
+                    txtAnswers.Text = "";
+                }
+                else
+                {
+                    txtAnswers.Text = txtAnswers.Text.Remove(txtAnswers.Text.Length - 1, 1);
+                }
+                
             }
             
         }
