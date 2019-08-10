@@ -8,7 +8,8 @@
         Title="CSCI497 Calculator" Height="399" Width="257.907">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="145*"/>
+            <ColumnDefinition Width="105*"/>
+            <ColumnDefinition Width="39*"/>
             <ColumnDefinition Width="106*"/>
         </Grid.ColumnDefinitions>
         <Button x:Name="btnCE" Content="CE" HorizontalAlignment="Left" Margin="10,96,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="btnCE_Click"/>
@@ -16,22 +17,24 @@
         <Button x:Name="btn4" Content="4" HorizontalAlignment="Left" Margin="10,202,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="Btn4_Click"/>
         <Button x:Name="btn1" Content="1" HorizontalAlignment="Left" Margin="10,255,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="Btn1_Click"/>
         <Button x:Name="btnPositiveNegative" Content="+-" HorizontalAlignment="Left" Margin="10,308,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14"/>
-        <Button x:Name="btnC" Content="C" HorizontalAlignment="Left" Margin="68,96,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="btnC_Click"/>
-        <Button x:Name="btn8" Content="8" HorizontalAlignment="Left" Margin="68,149,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="Btn8_Click"/>
-        <Button x:Name="btn5" Content="5" HorizontalAlignment="Left" Margin="68,202,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="Btn5_Click"/>
-        <Button x:Name="btn2" Content="2" HorizontalAlignment="Left" Margin="68,255,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="Btn2_Click"/>
-        <Button x:Name="btn0" Content="0" HorizontalAlignment="Left" Margin="68,308,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="Btn0_Click"/>
-        <Button x:Name="btnBack" Content="&lt;=" HorizontalAlignment="Left" Margin="126,96,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Grid.ColumnSpan="2" Click="BtnBack_Click"/>
-        <Button x:Name="btn9" Content="9" HorizontalAlignment="Left" Margin="126,149,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="Btn9_Click" Grid.ColumnSpan="2"/>
-        <Button x:Name="btn6" Content="6" HorizontalAlignment="Left" Margin="126,202,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="Btn6_Click" Grid.ColumnSpan="2"/>
-        <Button x:Name="btn3" Content="3" HorizontalAlignment="Left" Margin="126,255,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="Btn3_Click" Grid.ColumnSpan="2"/>
-        <Button x:Name="btnPlus" Content="+" HorizontalAlignment="Left" Margin="40.2,96,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="BtnPlus_Click" Grid.Column="1"/>
-        <Button x:Name="btnMinus" Content="-" HorizontalAlignment="Left" Margin="40.2,149,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="BtnMinus_Click" Grid.Column="1"/>
-        <Button x:Name="btnTimes" Content="*" HorizontalAlignment="Left" Margin="40.2,202,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="BtnTimes_Click" Grid.Column="1"/>
-        <Button x:Name="btnDivide" Content="/" HorizontalAlignment="Left" Margin="40.2,255,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="BtnDivide_Click" Grid.Column="1"/>
-        <Button x:Name="btnEquils" Content="=" HorizontalAlignment="Left" Margin="40.2,308,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="BtnEquils_Click" Grid.Column="1"/>
-        <TextBox x:Name="txtAnswers" HorizontalAlignment="Left" Height="39" Margin="10,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="226" FontSize="24" FontWeight="Bold" TextAlignment="Right" Grid.ColumnSpan="2" IsReadOnly="true"/>
-        <Button x:Name="btnPeroid" Content="." HorizontalAlignment="Left" Margin="126,308,0,0" VerticalAlignment="Top" Width="53" Height="48" Grid.ColumnSpan="2" FontWeight="Bold"/>
+        <Button x:Name="btnC" Content="C" HorizontalAlignment="Left" Margin="68,96,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="btnC_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="btn8" Content="8" HorizontalAlignment="Left" Margin="68,149,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="Btn8_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="btn5" Content="5" HorizontalAlignment="Left" Margin="68,202,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="Btn5_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="btn2" Content="2" HorizontalAlignment="Left" Margin="68,255,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="Btn2_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="btn0" Content="0" HorizontalAlignment="Left" Margin="68,308,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="Btn0_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnBack" Content="&lt;=" HorizontalAlignment="Left" Margin="21.462,96,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Grid.ColumnSpan="2" Click="BtnBack_Click" Grid.Column="1"/>
+        <Button x:Name="btn9" Content="9" HorizontalAlignment="Left" Margin="21.462,149,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="Btn9_Click" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Button x:Name="btn6" Content="6" HorizontalAlignment="Left" Margin="21.462,202,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="Btn6_Click" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Button x:Name="btn3" Content="3" HorizontalAlignment="Left" Margin="21.462,255,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="Btn3_Click" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Button x:Name="btnPlus" Content="+" HorizontalAlignment="Left" Margin="40,96,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="BtnPlus_Click" Grid.Column="2"/>
+        <Button x:Name="btnMinus" Content="-" HorizontalAlignment="Left" Margin="40,149,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="BtnMinus_Click" Grid.Column="2"/>
+        <Button x:Name="btnTimes" Content="*" HorizontalAlignment="Left" Margin="40,202,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="BtnTimes_Click" Grid.Column="2"/>
+        <Button x:Name="btnDivide" Content="/" HorizontalAlignment="Left" Margin="40,255,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="BtnDivide_Click" Grid.Column="2"/>
+        <Button x:Name="btnEquils" Content="=" HorizontalAlignment="Left" Margin="40,308,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="BtnEquils_Click" Grid.Column="2"/>
+        <TextBox x:Name="txtAnswers" HorizontalAlignment="Left" Height="39" Margin="10,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="226" FontSize="24" FontWeight="Bold" TextAlignment="Right" Grid.ColumnSpan="3" IsReadOnly="true"/>
+        <Button x:Name="btnPeroid" Content="." HorizontalAlignment="Left" Margin="21.462,308,0,0" VerticalAlignment="Top" Width="53" Height="48" Grid.ColumnSpan="2" FontWeight="Bold" Grid.Column="1"/>
+        <TextBox x:Name="runningInput" HorizontalAlignment="Left" Height="39" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="226" FontSize="24" FontWeight="Bold" TextAlignment="Right" Grid.ColumnSpan="3" IsReadOnly="true"/>
+
 
     </Grid>
 </Window>

@@ -18,6 +18,7 @@ namespace CSCI497_Calculator2
     public partial class MainWindow : Window
     {
         bool afterEquals = false;
+        bool afterOperation = false;
 
         //############### CREATE NEW OBJECT INSTANCE OF CALCULATOR CLASS ########################
         Calculator thisCalculator = new Calculator();
@@ -28,9 +29,32 @@ namespace CSCI497_Calculator2
             if (afterEquals == true)
             {
                 txtAnswers.Clear();
+                runningInput.Clear();
                 afterEquals = false;
+                afterOperation = false;
             }
-            txtAnswers.AppendText(num);
+            if (afterOperation == false)
+            {
+                txtAnswers.AppendText(num);
+            }
+            if (afterOperation == true)
+            {
+                txtAnswers.Clear();
+                txtAnswers.AppendText(num);
+                afterOperation = false;
+            }
+        }
+
+            void guiOperationEntry(String operation)
+        {
+            if (afterEquals == false && afterOperation == true)
+            {
+                txtAnswers.Text = thisCalculator.Calculate(runningInput.Text);
+            }
+            runningInput.AppendText(txtAnswers.Text);
+            runningInput.AppendText(operation);
+            
+            afterOperation = true;
         }
 
         //Initializes the MainWindow GUI Object
@@ -96,28 +120,30 @@ namespace CSCI497_Calculator2
         //##################### MATH OPERATION BUTTONS ##########################################
         private void BtnPlus_Click(object sender, RoutedEventArgs e)
         {
-            guiNumEntry("+");
+            guiOperationEntry("+");
         }
 
         private void BtnMinus_Click(object sender, RoutedEventArgs e)
         {
-            guiNumEntry("-");
+            guiOperationEntry("-");
         }
 
         private void BtnTimes_Click(object sender, RoutedEventArgs e)
         {
-            guiNumEntry("*");
+            guiOperationEntry("*");
         }
 
         private void BtnDivide_Click(object sender, RoutedEventArgs e)
         {
-            guiNumEntry("/");
+            guiOperationEntry("/");
         }
 
         //################ PERFORM CALCULATON BUTTON (EQUALS) ####################################
         private void BtnEquils_Click(object sender, RoutedEventArgs e)
         {
-            txtAnswers.Text = thisCalculator.Calculate(txtAnswers.Text);
+            runningInput.AppendText(txtAnswers.Text);
+            txtAnswers.Text = thisCalculator.Calculate(runningInput.Text);
+            runningInput.Clear();
             afterEquals = true;
         }
 
@@ -132,11 +158,13 @@ namespace CSCI497_Calculator2
         private void btnC_Click(object sender, RoutedEventArgs e)
         {
             txtAnswers.Clear();
+            runningInput.Clear();
         }
 
         //Backspace current entry
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
+            //create exception for when the string is 0 length
             txtAnswers.Text = txtAnswers.Text.Remove(txtAnswers.Text.Length - 1, 1);
         }
 
