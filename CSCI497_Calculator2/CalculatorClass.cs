@@ -21,7 +21,6 @@ namespace CSCI497_Calculator2
 
         public String Calculate(String eval)
         {
-
             
             //Returns the answer as string
             return dataTable.Compute(eval, null).ToString();
