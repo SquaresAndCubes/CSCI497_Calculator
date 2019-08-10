@@ -199,3 +199,5 @@ obj
 .vs/CSCI497_Calculator2/v15/Server/sqlite3/storage.ide
 .vs/CSCI497_Calculator2/v15/Server/sqlite3/db.lock
 .vs/CSCI497_Calculator2/DesignTimeBuild/.dtbcache
+.vs/slnx.sqlite
+.vs/VSWorkspaceState.json
