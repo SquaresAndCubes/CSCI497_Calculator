@@ -143,9 +143,7 @@ namespace CSCI497_Calculator2
 
         private void BtnPostiveNegative_Click(object sender, RoutedEventArgs e)
         {
-            //trims the numbers off past the last operation
-            var digits = new[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
-            txtAnswers.Text = txtAnswers.Text.TrimEnd(digits);
+            //TBD
 
         }
         //######################### END MATH OPERATION BUTTONS ###################################
@@ -172,7 +170,7 @@ namespace CSCI497_Calculator2
         private void btnCE_Click(object sender, RoutedEventArgs e)
         {
             //trims the numbers off past the last operation
-            var digits = new[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+            var digits = new[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.' };
             txtAnswers.Text = txtAnswers.Text.TrimEnd(digits);
         }
     }
