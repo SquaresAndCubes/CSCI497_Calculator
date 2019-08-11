@@ -67,5 +67,17 @@ namespace CSCI497_Calculator2
                 return "10/2 Division Test Passed!!";
             }
         }
+        public String multipleOperationsTest()
+        {
+
+            if (testCalculator.Calculate("10/2*3+21") != "36")
+            {
+                return "10/2*3+21 Multiple Operations Test Fail";
+            }
+            else
+            {
+                return "10/2*3+21 Multiple Operations Test Passed!!";
+            }
+        }
     }
 }
