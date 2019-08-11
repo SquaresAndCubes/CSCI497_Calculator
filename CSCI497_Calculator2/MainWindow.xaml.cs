@@ -42,7 +42,6 @@ namespace CSCI497_Calculator2
             if (isOperation == false)
             {
                 txtAnswers.AppendText(operation);
-
             }
             isOperation = true;
         }
@@ -121,7 +120,6 @@ namespace CSCI497_Calculator2
         private void BtnMinus_Click(object sender, RoutedEventArgs e)
         {
             guiOperationEntry("-");
-
         }
 
         private void BtnTimes_Click(object sender, RoutedEventArgs e)
@@ -144,7 +142,6 @@ namespace CSCI497_Calculator2
         private void BtnPostiveNegative_Click(object sender, RoutedEventArgs e)
         {
             //TBD
-
         }
         //######################### END MATH OPERATION BUTTONS ###################################
 
@@ -163,7 +160,6 @@ namespace CSCI497_Calculator2
             {
                 txtAnswers.Text = txtAnswers.Text.Remove(txtAnswers.Text.Length - 1, 1);
             }
-
         }
 
         //Clears only the number that you are currently working on.
