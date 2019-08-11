@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CSCI497_Calculator2"
         mc:Ignorable="d"
-        Title="CSCI497 Calculator" Height="399" Width="257.907">
+        Title="CSCI497 Calculator" Height="590.771" Width="257.907">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="105*"/>
@@ -33,7 +33,9 @@
         <Button x:Name="btnEquils" Content="=" HorizontalAlignment="Left" Margin="40,308,0,0" VerticalAlignment="Top" Width="53" Height="48" FontSize="14" Click="BtnEquils_Click" Grid.Column="2"/>
         <TextBox x:Name="txtAnswers" HorizontalAlignment="Left" Height="39" Margin="10,52,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="226" FontSize="24" FontWeight="Bold" TextAlignment="Right" Grid.ColumnSpan="3" IsReadOnly="true"/>
         <Button x:Name="btnPeroid" Content="." HorizontalAlignment="Left" Margin="21.462,308,0,0" VerticalAlignment="Top" Width="53" Height="48" Grid.ColumnSpan="2" FontWeight="Bold" Grid.Column="1" Click="btnPeriod_Click"/>
-        <TextBox x:Name="runningInput" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="39" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="226" IsReadOnly="true" FontSize="24" TextAlignment="Right"/>
+        <TextBox x:Name="runningInput" Grid.ColumnSpan="3" HorizontalAlignment="Left" Margin="10,5,0,509" TextWrapping="Wrap" Width="226" IsReadOnly="true" FontSize="24" TextAlignment="Right"/>
+        <TextBox x:Name="consoleOut" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="154" Margin="10,361,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="226" IsReadOnly="True" VerticalScrollBarVisibility="Visible" AcceptsReturn="true"/>
+        <Button Content="Run Unit Testing" HorizontalAlignment="Left" Margin="10,520,0,0" VerticalAlignment="Top" Width="111" Height="26" Grid.ColumnSpan="2" Click="unitTesting_Click"/>
 
 
     </Grid>

@@ -22,9 +22,14 @@ namespace CSCI497_Calculator2
         bool isNumber = false;
         int operation_num = 0;
         char[] charsToTrim = { '+', '-', '*', '/' };
+        
 
         //############### CREATE NEW OBJECT INSTANCE OF CALCULATOR CLASS ########################
         Calculator thisCalculator = new Calculator();
+        //#######################################################################################
+
+        //############### CREATE NEW OBJECT INSTANCE OF CALCULATOR CLASS ########################
+        UnitTest calculatorUnitTest = new UnitTest();
         //#######################################################################################
 
         //function for number buttons
@@ -208,6 +213,21 @@ namespace CSCI497_Calculator2
         private void btnCE_Click(object sender, RoutedEventArgs e)
         {
             txtAnswers.Clear();
+            
         }
+
+        private void unitTesting_Click(object sender, RoutedEventArgs e)
+        {
+            unit_test();
+        }
+
+        private void unit_test()
+        {
+            consoleOut.AppendText(calculatorUnitTest.additionTest());
+            consoleOut.AppendText(Environment.NewLine);
+
+        }
+
+
     }
 }

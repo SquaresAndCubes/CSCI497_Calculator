@@ -14,32 +14,28 @@ namespace CSCI497_Calculator2
     //##################################################################################################//
     //######################### CALCULATOR CLASS (LOGIC ONLY) ##########################################//
     //##################################################################################################//
-    public class Calculator
+
+    class UnitTest
     {
+        Calculator testCalculator = new Calculator();
 
-        String posneg = "";
-
-        System.Data.DataTable dataTable = new System.Data.DataTable();
-        public String Calculate(String eval)
+        public String additionTest()
         {
-            try
-            {
-                //Returns the answer as string
-                return dataTable.Compute(eval, null).ToString();
-            }
-            catch (Exception)
-            {
-                return "invalid input";
-            }
 
+            if (testCalculator.Calculate("1+1") != "2")
+            {
+                return "1+1 Addition Test Fail";
+            }
+            else
+            {
+                return "1+1 Addition Test Passed!!";
+            }
         }
 
-        //converts current working number to a positive or negative number
-        public String PosNeg(String num_in)
-        {
-            posneg = (double.Parse(num_in) * -1).ToString();
-            return posneg;
-        }
     }
+
+
+
+
 
 }
