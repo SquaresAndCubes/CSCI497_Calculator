@@ -104,6 +104,11 @@ namespace CSCI497_Calculator2
             guiNumEntry("9");
         }
 
+        private void btnPeriod_Click(object sender, RoutedEventArgs e)
+        {
+            guiNumEntry(".");
+        }
+
         //####################### END NUMBER BUTTONS ############################################
 
 
