@@ -28,7 +28,7 @@ namespace CSCI497_Calculator2
         Calculator thisCalculator = new Calculator();
         //#######################################################################################
 
-        //############### CREATE NEW OBJECT INSTANCE OF CALCULATOR CLASS ########################
+        //############### CREATE NEW OBJECT INSTANCE OF UNITTEST CLASS ########################
         UnitTest calculatorUnitTest = new UnitTest();
         //#######################################################################################
 
@@ -179,6 +179,7 @@ namespace CSCI497_Calculator2
                 runningInput.Clear();
             }
             afterEquals = true;
+            operation_num = 0;
         }
 
         private void BtnPostiveNegative_Click(object sender, RoutedEventArgs e)
@@ -216,11 +217,13 @@ namespace CSCI497_Calculator2
             
         }
 
+        //button to run unit testing
         private void unitTesting_Click(object sender, RoutedEventArgs e)
         {
             unit_test();
         }
 
+        //unit test function calls the calculatorUnitTest class
         private void unit_test()
         {
             consoleOut.AppendText(calculatorUnitTest.additionTest());
@@ -231,7 +234,8 @@ namespace CSCI497_Calculator2
             consoleOut.AppendText(Environment.NewLine);
             consoleOut.AppendText(calculatorUnitTest.divisionTest());
             consoleOut.AppendText(Environment.NewLine);
-
+            consoleOut.AppendText(calculatorUnitTest.multipleOperationsTest());
+            consoleOut.AppendText(Environment.NewLine);
         }
 
 
