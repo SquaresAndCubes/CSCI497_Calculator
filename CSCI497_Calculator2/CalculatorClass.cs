@@ -19,8 +19,16 @@ namespace CSCI497_Calculator2
         System.Data.DataTable dataTable = new System.Data.DataTable();
         public String Calculate(String eval)
         {
-            //Returns the answer as string
-            return dataTable.Compute(eval, null).ToString();
-        }
+            try
+            {
+                //Returns the answer as string
+                return dataTable.Compute(eval, null).ToString();
+            }
+            catch (Exception)
+            {
+                return "invalid input";
+            }
+
         }
     }
+}

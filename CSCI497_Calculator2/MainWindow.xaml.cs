@@ -18,43 +18,33 @@ namespace CSCI497_Calculator2
     public partial class MainWindow : Window
     {
         bool afterEquals = false;
-        bool afterOperation = false;
+        bool isOperation = false;
 
         //############### CREATE NEW OBJECT INSTANCE OF CALCULATOR CLASS ########################
         Calculator thisCalculator = new Calculator();
         //#######################################################################################
 
-            void guiNumEntry(String num)
+        //function for number buttons
+        void guiNumEntry(String num)
         {
             if (afterEquals == true)
             {
                 txtAnswers.Clear();
-                runningInput.Clear();
                 afterEquals = false;
-                afterOperation = false;
             }
-            if (afterOperation == false)
-            {
-                txtAnswers.AppendText(num);
-            }
-            if (afterOperation == true)
-            {
-                txtAnswers.Clear();
-                txtAnswers.AppendText(num);
-                afterOperation = false;
-            }
+            txtAnswers.AppendText(num);
+            isOperation = false;
         }
 
-            void guiOperationEntry(String operation)
+        //function for operation buttons
+        void guiOperationEntry(String operation)
         {
-            if (afterEquals == false && afterOperation == true)
+            if (isOperation == false)
             {
-                txtAnswers.Text = thisCalculator.Calculate(runningInput.Text);
+                txtAnswers.AppendText(operation);
+
             }
-            runningInput.AppendText(txtAnswers.Text);
-            runningInput.AppendText(operation);
-            
-            afterOperation = true;
+            isOperation = true;
         }
 
         //Initializes the MainWindow GUI Object
@@ -116,7 +106,7 @@ namespace CSCI497_Calculator2
 
         //####################### END NUMBER BUTTONS ############################################
 
-        
+
         //##################### MATH OPERATION BUTTONS ##########################################
         private void BtnPlus_Click(object sender, RoutedEventArgs e)
         {
@@ -126,6 +116,7 @@ namespace CSCI497_Calculator2
         private void BtnMinus_Click(object sender, RoutedEventArgs e)
         {
             guiOperationEntry("-");
+
         }
 
         private void BtnTimes_Click(object sender, RoutedEventArgs e)
@@ -141,14 +132,15 @@ namespace CSCI497_Calculator2
         //################ PERFORM CALCULATON BUTTON (EQUALS) ####################################
         private void BtnEquils_Click(object sender, RoutedEventArgs e)
         {
-            runningInput.AppendText(txtAnswers.Text);
-            txtAnswers.Text = thisCalculator.Calculate(runningInput.Text);
-            runningInput.Clear();
+            txtAnswers.Text = thisCalculator.Calculate(txtAnswers.Text);
             afterEquals = true;
         }
 
         private void BtnPostiveNegative_Click(object sender, RoutedEventArgs e)
         {
+            //trims the numbers off past the last operation
+            var digits = new[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+            txtAnswers.Text = txtAnswers.Text.TrimEnd(digits);
 
         }
         //######################### END MATH OPERATION BUTTONS ###################################
@@ -158,19 +150,25 @@ namespace CSCI497_Calculator2
         private void btnC_Click(object sender, RoutedEventArgs e)
         {
             txtAnswers.Clear();
-            runningInput.Clear();
         }
 
         //Backspace current entry
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
-            //create exception for when the string is 0 length
-            txtAnswers.Text = txtAnswers.Text.Remove(txtAnswers.Text.Length - 1, 1);
+            //backspace until the string is of 0 length
+            if (txtAnswers.Text.Length != 0)
+            {
+                txtAnswers.Text = txtAnswers.Text.Remove(txtAnswers.Text.Length - 1, 1);
+            }
+
         }
 
         //Clears only the number that you are currently working on.
         private void btnCE_Click(object sender, RoutedEventArgs e)
         {
+            //trims the numbers off past the last operation
+            var digits = new[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+            txtAnswers.Text = txtAnswers.Text.TrimEnd(digits);
         }
     }
 }
