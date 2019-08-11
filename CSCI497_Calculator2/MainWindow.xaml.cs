@@ -19,6 +19,9 @@ namespace CSCI497_Calculator2
     {
         bool afterEquals = false;
         bool isOperation = false;
+        bool isNumber = false;
+        int operation_num = 0;
+        char[] charsToTrim = { '+', '-', '*', '/' };
 
         //############### CREATE NEW OBJECT INSTANCE OF CALCULATOR CLASS ########################
         Calculator thisCalculator = new Calculator();
@@ -30,20 +33,40 @@ namespace CSCI497_Calculator2
             if (afterEquals == true)
             {
                 txtAnswers.Clear();
-                afterEquals = false;
             }
-            txtAnswers.AppendText(num);
+            if (isOperation == true)
+            {
+                txtAnswers.Clear();
+                txtAnswers.AppendText(num);
+                isOperation = false;
+            }
+            else
+            {
+                txtAnswers.AppendText(num);
+                isNumber = true;
+            }
             isOperation = false;
         }
 
         //function for operation buttons
         void guiOperationEntry(String operation)
         {
-            if (isOperation == false)
+
+            if(isNumber == true)
             {
-                txtAnswers.AppendText(operation);
+                runningInput.AppendText(txtAnswers.Text);
+                runningInput.AppendText(operation);
             }
+            else if (operation_num >= 1)
+            {
+                runningInput.AppendText(txtAnswers.Text);
+                txtAnswers.Text = thisCalculator.Calculate(runningInput.Text);
+                runningInput.AppendText(operation);
+            }
+
             isOperation = true;
+            isNumber = false;
+            operation_num += 1;
         }
 
         //Initializes the MainWindow GUI Object
@@ -135,13 +158,27 @@ namespace CSCI497_Calculator2
         //################ PERFORM CALCULATON BUTTON (EQUALS) ####################################
         private void BtnEquils_Click(object sender, RoutedEventArgs e)
         {
-            txtAnswers.Text = thisCalculator.Calculate(txtAnswers.Text);
+            
+            if (operation_num <= 1)
+            {
+                runningInput.AppendText(txtAnswers.Text);
+                txtAnswers.Clear();
+                txtAnswers.Text = thisCalculator.Calculate(runningInput.Text);
+                runningInput.Clear();
+            }
+
+            else
+            {
+                runningInput.Text = runningInput.Text.TrimEnd(charsToTrim);
+                txtAnswers.Text = thisCalculator.Calculate(runningInput.Text);
+                runningInput.Clear();
+            }
             afterEquals = true;
         }
 
         private void BtnPostiveNegative_Click(object sender, RoutedEventArgs e)
         {
-            //TBD
+            txtAnswers.Text = thisCalculator.PosNeg(txtAnswers.Text);
         }
         //######################### END MATH OPERATION BUTTONS ###################################
 
@@ -149,7 +186,12 @@ namespace CSCI497_Calculator2
         //####################### BUTTONS FOR CLEARING AND BACKSPACE ###############################
         private void btnC_Click(object sender, RoutedEventArgs e)
         {
+            afterEquals = false;
+            isOperation = false;
+            isNumber = false;
+            operation_num = 0;
             txtAnswers.Clear();
+            runningInput.Clear();
         }
 
         //Backspace current entry
@@ -165,9 +207,7 @@ namespace CSCI497_Calculator2
         //Clears only the number that you are currently working on.
         private void btnCE_Click(object sender, RoutedEventArgs e)
         {
-            //trims the numbers off past the last operation
-            var digits = new[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.' };
-            txtAnswers.Text = txtAnswers.Text.TrimEnd(digits);
+            txtAnswers.Clear();
         }
     }
 }

@@ -16,6 +16,9 @@ namespace CSCI497_Calculator2
     //##################################################################################################//
     public class Calculator
     {
+
+        String posneg = "";
+
         System.Data.DataTable dataTable = new System.Data.DataTable();
         public String Calculate(String eval)
         {
@@ -29,6 +32,13 @@ namespace CSCI497_Calculator2
                 return "invalid input";
             }
 
+        }
+
+        //converts current working number to a positive or negative number
+        public String PosNeg(String num_in)
+        {
+            posneg = (double.Parse(num_in) * -1).ToString();
+            return posneg;
         }
     }
 }
