@@ -56,6 +56,7 @@ namespace CSCI497_Calculator2
             {
                 runningInput.AppendText(txtAnswers.Text);
                 runningInput.AppendText(operation);
+                txtAnswers.Clear();
             }
             else if (operation_num >= 1)
             {
@@ -63,7 +64,6 @@ namespace CSCI497_Calculator2
                 txtAnswers.Text = thisCalculator.Calculate(runningInput.Text);
                 runningInput.AppendText(operation);
             }
-
             isOperation = true;
             isNumber = false;
             operation_num += 1;
