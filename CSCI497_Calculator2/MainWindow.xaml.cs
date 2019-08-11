@@ -225,6 +225,12 @@ namespace CSCI497_Calculator2
         {
             consoleOut.AppendText(calculatorUnitTest.additionTest());
             consoleOut.AppendText(Environment.NewLine);
+            consoleOut.AppendText(calculatorUnitTest.subtractionTest());
+            consoleOut.AppendText(Environment.NewLine);
+            consoleOut.AppendText(calculatorUnitTest.multiplicationTest());
+            consoleOut.AppendText(Environment.NewLine);
+            consoleOut.AppendText(calculatorUnitTest.divisionTest());
+            consoleOut.AppendText(Environment.NewLine);
 
         }
 
