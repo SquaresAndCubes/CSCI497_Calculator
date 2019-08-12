@@ -184,7 +184,10 @@ namespace CSCI497_Calculator2
 
         private void BtnPostiveNegative_Click(object sender, RoutedEventArgs e)
         {
-            txtAnswers.Text = thisCalculator.PosNeg(txtAnswers.Text);
+            if(txtAnswers.Text != "")
+            {
+                txtAnswers.Text = thisCalculator.PosNeg(txtAnswers.Text);
+            }
         }
         //######################### END MATH OPERATION BUTTONS ###################################
 
