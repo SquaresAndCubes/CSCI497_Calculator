@@ -51,6 +51,7 @@ namespace CSCI497_Calculator2
                 isNumber = true;
             }
             isOperation = false;
+            afterEquals = false;
         }
 
         //function for operation buttons
