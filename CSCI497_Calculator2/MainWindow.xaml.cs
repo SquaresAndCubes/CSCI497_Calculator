@@ -69,6 +69,7 @@ namespace CSCI497_Calculator2
                 runningInput.AppendText(txtAnswers.Text);
                 txtAnswers.Text = thisCalculator.Calculate(runningInput.Text);
                 runningInput.AppendText(operation);
+                txtAnswers.Clear();
             }
             isOperation = true;
             isNumber = false;
@@ -175,7 +176,7 @@ namespace CSCI497_Calculator2
 
             else
             {
-                runningInput.Text = runningInput.Text.TrimEnd(charsToTrim);
+                runningInput.AppendText(txtAnswers.Text);
                 txtAnswers.Text = thisCalculator.Calculate(runningInput.Text);
                 runningInput.Clear();
             }
@@ -211,6 +212,10 @@ namespace CSCI497_Calculator2
             if (txtAnswers.Text.Length != 0)
             {
                 txtAnswers.Text = txtAnswers.Text.Remove(txtAnswers.Text.Length - 1, 1);
+            }
+            else if (txtAnswers.Text.Length == 0 && runningInput.Text.Length != 0)
+            {
+                runningInput.Text = runningInput.Text.Remove(runningInput.Text.Length - 1, 1);
             }
         }
 
