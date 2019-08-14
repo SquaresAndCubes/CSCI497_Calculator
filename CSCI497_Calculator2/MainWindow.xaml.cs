@@ -53,24 +53,27 @@ namespace CSCI497_Calculator2
             }
             isOperation = false;
             afterEquals = false;
+            isNumber = true;
         }
 
         //function for operation buttons
         void guiOperationEntry(String operation)
         {
-
-            if(isNumber == true)
+            if (isOperation == false)
             {
-                runningInput.AppendText(txtAnswers.Text);
-                runningInput.AppendText(operation);
-                txtAnswers.Clear();
-            }
-            else if (operation_num >= 1)
-            {
-                runningInput.AppendText(txtAnswers.Text);
-                txtAnswers.Text = thisCalculator.Calculate(runningInput.Text);
-                runningInput.AppendText(operation);
-                txtAnswers.Clear();
+                if (isNumber == true)
+                {
+                    runningInput.AppendText(txtAnswers.Text);
+                    runningInput.AppendText(operation);
+                    txtAnswers.Clear();
+                }
+                else if (operation_num >= 1)
+                {
+                    runningInput.AppendText(txtAnswers.Text);
+                    txtAnswers.Text = thisCalculator.Calculate(runningInput.Text);
+                    runningInput.AppendText(operation);
+                    txtAnswers.Clear();
+                }
             }
             isOperation = true;
             isNumber = false;
